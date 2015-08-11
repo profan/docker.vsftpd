@@ -15,7 +15,7 @@ RUN sed -i "s/anonymous_enable=NO/anonymous_enable=YES/" /etc/vsftpd.conf
 RUN mkdir -p /var/run/vsftpd/empty
 VOLUME /var/ftp
 
-EXPOSE 21
+EXPOSE 20 21
 EXPOSE 10090-10100
 
 CMD /usr/sbin/vsftpd
