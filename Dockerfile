@@ -1,14 +1,12 @@
 FROM debian:jessie
 MAINTAINER Robin Hübner "profan@prfn.se"
 
-ENV hostname "cdn.prfn.se"
-
+ENV hostname ""
 RUN apt-get update && apt-get install -y --no-install-recommends vsftpd
 RUN apt-get clean
 
 RUN echo "pasv_address="$hostname >> /etc/vsftpd.conf
 RUN echo "pasv_addr_resolve=YES" >> /etc/vsftpd.conf
-RUN echo "pasv_enable=YES" >> /etc/vsftpd.conf
 RUN echo "pasv_enable=YES" >> /etc/vsftpd.conf
 RUN echo "port_enable=YES" >> /etc/vsftpd.conf
 RUN echo "pasv_min_port=10000" >> /etc/vsftpd.conf
