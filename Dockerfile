@@ -6,7 +6,7 @@ RUN apt-get clean
 
 RUN echo "pasv_enable=YES" >> /etc/vsftpd.conf
 RUN echo "pasv_min_port=50000" >> /etc/vsftpd.conf
-RUN echo "pasv_max_port=51000" >> /etc/vsftpd.conf
+RUN echo "pasv_max_port=50100" >> /etc/vsftpd.conf
 RUN echo "anon_root=/var/ftp" >> /etc/vsftpd.conf
 RUN echo "anon_max_rate=0" >> /etc/vsftpd.conf
 RUN sed -i "s/local_enable=YES/local_enable=NO/" /etc/vsftpd.conf
