@@ -5,6 +5,7 @@ ENV hostname "cdn.prfn.se"
 RUN apt-get update && apt-get install -y --no-install-recommends vsftpd
 RUN apt-get clean
 
+RUN echo "seccomp_sandbox=NO" >> /etc/vsftpd.conf
 RUN echo "pasv_address="$hostname >> /etc/vsftpd.conf
 RUN echo "pasv_addr_resolve=YES" >> /etc/vsftpd.conf
 RUN echo "pasv_enable=YES" >> /etc/vsftpd.conf
