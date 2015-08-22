@@ -1,7 +1,7 @@
 FROM debian:jessie
 MAINTAINER Robin Hübner "profan@prfn.se"
 
-ENV hostname ""
+ENV hostname "cdn.prfn.se"
 RUN apt-get update && apt-get install -y --no-install-recommends vsftpd
 RUN apt-get clean
 
