@@ -16,6 +16,6 @@ RUN mkdir -p /var/run/vsftpd/empty
 VOLUME /var/ftp
 
 EXPOSE 20 21
-EXPOSE 50000-51000
+EXPOSE 50000-50100
 
 CMD /usr/sbin/vsftpd
