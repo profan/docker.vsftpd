@@ -8,12 +8,13 @@ RUN apt-get clean
 RUN echo "pasv_address="$hostname >> /etc/vsftpd.conf
 RUN echo "pasv_addr_resolve=YES" >> /etc/vsftpd.conf
 RUN echo "pasv_enable=YES" >> /etc/vsftpd.conf
-RUN echo "port_enable=YES" >> /etc/vsftpd.conf
+RUN echo "port_enable=NO" >> /etc/vsftpd.conf
 RUN echo "pasv_min_port=10000" >> /etc/vsftpd.conf
 RUN echo "pasv_max_port=10100" >> /etc/vsftpd.conf
 RUN echo "tcp_wrappers=YES" >> /etc/vsftpd.conf
 RUN echo "anon_root=/var/ftp" >> /etc/vsftpd.conf
 RUN echo "anon_max_rate=0" >> /etc/vsftpd.conf
+RUN sed -i "s/connect_from_port_20=YES/connect_from_port_20=NO/" /etc/vsftpd.conf
 RUN sed -i "s/local_enable=YES/local_enable=NO/" /etc/vsftpd.conf
 RUN sed -i "s/anonymous_enable=NO/anonymous_enable=YES/" /etc/vsftpd.conf
 
